@@ -43,5 +43,10 @@ public class PersonRoutersConfig {
                 Person.class);
 
     }
+    @Bean
+    public RouterFunction<ServerResponse> routePersonUsingReqParam(PersonsHandler handler){
+        return route(GET("/routing/persons/single1"),handler::getOnePersonByReqParam);
+
+    }
 
 }
