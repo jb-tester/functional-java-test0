@@ -25,6 +25,9 @@ public class PersonsRepo {
          persons.add(new Person("3", "vera", 23));
          persons.add(new Person("4", "lena", 49));
          persons.add(new Person("5", "katya", 26));
+         persons.add(new Person("6", "natasha", 72));
+         persons.add(new Person("7", "andrey", 74));
+         persons.add(new Person("8", "arina", 5));
     }
     public Mono<Person> getPersonById(String id){
         Person person = new Person("null", "null", 0);
@@ -45,5 +48,13 @@ public class PersonsRepo {
         return Flux.fromIterable(persons);
     }
 
+    public Flux<Person> getPersonsByAgeLimits(int min, int max){
+        List<Person> rez = new ArrayList<>();
+        for (Person person : persons) {
+            if ((person.getAge()>=min) && (person.getAge()<=max)){rez.add(person);}
+        }
+        return Flux.fromIterable(rez);
+
+    }
 
 }

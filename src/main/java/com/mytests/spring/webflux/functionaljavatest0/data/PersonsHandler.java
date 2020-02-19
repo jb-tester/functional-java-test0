@@ -28,6 +28,12 @@ public class PersonsHandler {
     public Mono<ServerResponse> getAllPersons(ServerRequest req){
         return  ServerResponse.ok().body(personsRepo.getAllpersons(), Person.class);
     }
+
+    public Mono<ServerResponse> getPersonsByAge(ServerRequest req){
+        return ServerResponse.ok().body(personsRepo.getPersonsByAgeLimits(Integer.parseInt(req.pathVariable("")),
+                Integer.parseInt(req.pathVariable(""))),
+                Person.class );
+    }
     public Mono<ServerResponse> getOnePersonByReqParam(ServerRequest req){
 
         return req.queryParam("idparam")
