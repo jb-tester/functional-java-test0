@@ -1,18 +1,6 @@
-#######
-
-
-###
- GET http://localhost:8080/routing/persons/single1?idparam=3
-
-###
-
-###
- GET http://localhost:8080/routing/persons/all
-
-
-
 ###
  GET http://localhost:8080/routing/persons/single/3
 
 ###
+ GET http://localhost:8080/routing/persons/new/irina/1/49
 ###
