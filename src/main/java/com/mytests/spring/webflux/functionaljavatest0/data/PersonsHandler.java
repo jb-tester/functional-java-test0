@@ -30,8 +30,8 @@ public class PersonsHandler {
     }
 
     public Mono<ServerResponse> getPersonsByAge(ServerRequest req){
-        return ServerResponse.ok().body(personsRepo.getPersonsByAgeLimits(Integer.parseInt(req.pathVariable("")),
-                Integer.parseInt(req.pathVariable(""))),
+        return ServerResponse.ok().body(personsRepo.getPersonsByAgeLimits(Integer.parseInt(req.pathVariable("min")),
+                Integer.parseInt(req.pathVariable("max"))),
                 Person.class );
     }
     public Mono<ServerResponse> getOnePersonByReqParam(ServerRequest req){
