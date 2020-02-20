@@ -30,11 +30,6 @@ public class AnyPersonRouteConfig {
     }
 
     public Mono<ServerResponse> getAnyPerson(ServerRequest req) {
-
-        int[] aaa = {1,2,3};
-        Integer[][]bbb = new Integer[0][0];
-        List list = new ArrayList();
-
         return ServerResponse.ok().body(Mono.just(new Person(
                         req.pathVariable("any_id"),
                         req.pathVariable("any_name"),
