@@ -1,6 +1,13 @@
 ###
+###
+GET http://localhost:8080/routing/persons/single1?idparam=2
+
+<> 2020-06-17T083754.200.json
+
+###
  GET http://localhost:8080/routing/persons/single/3
 
 ###
  GET http://localhost:8080/routing/persons/new/irina/1/49
+
 ###
