@@ -2,13 +2,15 @@ package com.mytests.spring.webflux.functionaljavatest0;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
+import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Mono;
 
 import static org.springframework.web.reactive.function.BodyInserters.fromValue;
-import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
-import static org.springframework.web.reactive.function.server.RequestPredicates.path;
+import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
@@ -42,4 +44,17 @@ public class NewRouters {
                                         req -> ok().body(fromValue("dddd"))))
                 ;
     }
+
+
+    @Bean
+    public RouterFunction<ServerResponse> routeComposedPredicate() {
+        return route(method(HttpMethod.GET).and(path("/composedPredicate")),
+                this::processComposedPredicates);
+    }
+
+    private Mono<ServerResponse> processComposedPredicates(ServerRequest serverRequest) {
+        return ServerResponse.ok().body(fromValue("composed predicate"));
+    }
+
+
 }
