@@ -1,38 +1,40 @@
-###
 GET http://localhost:8080/route3/nested_path
 
-
+<> 2020-11-20T215244.200.txt
 
 ###
+
+GET http://localhost:8080/route3/foo_route
+
+<> 2020-11-20T214122.200.txt
+
+###
+
+GET http://localhost:8080/routing/persons/single/{{person_id}}
+
+###
+
 GET http://localhost:8080/composedPredicate
 
 <> 2020-09-21T012017.200.txt
 
 ###
+
 GET http://localhost:8080/case_first
 
 <> 2020-09-18T034657.200.txt
 
 ###
+
 GET http://localhost:8080/case_second/c_route
 
 <> 2020-09-18T034650.200.txt
 
 ###
-GET http://localhost:8080/case_second/d_route
 
-<> 2020-09-18T034650.200.txt
-
-###
-###
 GET http://localhost:8080/routing/persons/single1?idparam=2
 
 <> 2020-06-17T083754.200.json
 
 ###
- GET http://localhost:8080/routing/persons/single/3
 
-###
- GET http://localhost:8080/routing/persons/new/irina/1/49
-
-###

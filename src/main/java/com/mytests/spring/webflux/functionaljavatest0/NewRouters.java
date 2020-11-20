@@ -45,6 +45,16 @@ public class NewRouters {
                 ;
     }
 
+    @Bean
+    public RouterFunction<ServerResponse> nestedPath() {
+        return route()
+                .path("/route3", () ->
+                        route()
+                                .GET("/nested_path",
+                                        req -> ok().body(fromValue("nested .path(..) passed"))).build()).build()
+
+                ;
+    }
 
     @Bean
     public RouterFunction<ServerResponse> routeComposedPredicate() {
