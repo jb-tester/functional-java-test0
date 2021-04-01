@@ -36,11 +36,11 @@ public class NewRouters {
 
     @Bean
     public RouterFunction<ServerResponse> routeNested2() {
-        return route(GET("/case_first"), req -> ok().body(fromValue("aaaa")))
+        return route(GET("/case_first"), req -> ok().body(fromValue("aaaa")))   // https://youtrack.jetbrains.com/issue/IDEA-251039
                 .andNest(path("/case_second"),
                         route(GET("/c_route"),
                                 req -> ok().body(fromValue("cccc")))
-                                .andRoute(GET("/d_route"),
+                                .andRoute(GET("/d_route"),     // https://youtrack.jetbrains.com/issue/IDEA-251043
                                         req -> ok().body(fromValue("dddd"))))
                 ;
     }
@@ -50,7 +50,7 @@ public class NewRouters {
         return route()
                 .path("/route3", () ->
                         route()
-                                .GET("/nested_path",
+                                .GET("/nested_path",   // https://youtrack.jetbrains.com/issue/IDEA-255854
                                         req -> ok().body(fromValue("nested .path(..) passed"))).build()).build()
 
                 ;
@@ -58,7 +58,7 @@ public class NewRouters {
 
     @Bean
     public RouterFunction<ServerResponse> routeComposedPredicate() {
-        return route(method(HttpMethod.GET).and(path("/composedPredicate")),
+        return route(method(HttpMethod.GET).and(path("/composedPredicate")),     // https://youtrack.jetbrains.com/issue/IDEA-234927
                 this::processComposedPredicates);
     }
 
