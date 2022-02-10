@@ -1,3 +1,67 @@
+GET http://localhost:8080/test0/functional/simple/fooo
+
+<> 2021-12-29T154247.200.txt
+
+###
+
+GET http://localhost:8080/test0/functional/supersimple
+
+<> 2021-12-29T154242.200.txt
+
+###
+
+GET http://localhost:8080/test0/functional/supersimple
+
+<> 2021-12-29T154126.200.txt
+
+###
+
+GET http://localhost:8080/test0/functional/supersimple
+
+<> 2021-12-29T154039.200.txt
+
+###
+
+GET http://localhost:8080/test0/functional/supersimple
+
+<> 2021-12-29T153930.200.txt
+
+###
+
+GET http://localhost:8080/test0/functional/simple/fooo
+
+###
+
+GET http://localhost:8080/test0/functional/supersimple
+
+<> 2021-12-29T153730.200.txt
+
+###
+
+GET http://localhost:8080/test0/functional/supersimple
+
+<> 2021-12-29T153705.200.txt
+
+###
+
+GET http://localhost:8080/case_second/d_route
+
+<> 2021-04-01T150441.200.txt
+
+###
+
+GET http://localhost:8080/case_first/case_second/d_route
+
+<> 2021-04-01T145341.404.json
+
+###
+
+GET http://localhost:8080/case_second/d_route
+
+<> 2021-04-01T145115.200.txt
+
+###
+
 GET http://localhost:8080/route3/nested_path
 
 <> 2020-11-20T215244.200.txt

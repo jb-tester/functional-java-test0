@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import static org.springframework.web.reactive.function.BodyInserters.fromObject;
 import static org.springframework.web.reactive.function.BodyInserters.fromValue;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
@@ -23,6 +22,20 @@ public class SimpleRouter {
     @Bean
     public RouterFunction<ServerResponse> simple() {
         return route(GET("/test0/functional/simple/{pathvar}"),
-                req -> ok().body(fromValue("simple "+req.pathVariable("pathvar")))) ;
+                req -> ok().body(fromValue("simple " + req.pathVariable("pathvar"))));
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> superSimple() {
+        return route(GET("/test0/functional/supersimple"),
+                req -> ok().body(fromValue("super simple ")));
+    }
+
+    @Bean
+    RouterFunction<ServerResponse> simpleFunctionalRouteBuilder() {
+        return route()
+                .GET("/test0/functional/builder",
+                        req -> ok().body(fromValue("simple route builder ")))
+                .build();
     }
 }

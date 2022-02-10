@@ -36,3 +36,8 @@ GET http://localhost:8080/routing/persons/single1?idparam=2
  GET http://localhost:8080/routing/persons/new/irina/1/49
 
 ###
+
+GET http://localhost:8080/test0/functional/supersimple
+
+###
+GET http://localhost:8080/test0/functional/simple/fooo
