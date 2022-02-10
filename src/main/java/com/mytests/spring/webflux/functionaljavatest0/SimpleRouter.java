@@ -38,4 +38,12 @@ public class SimpleRouter {
                         req -> ok().body(fromValue("simple route builder ")))
                 .build();
     }
+
+    @Bean
+    RouterFunction<ServerResponse> simpleFunctionalRouteBuilderWithPathVar() {
+        return route()
+                .GET("/test0/functional/builderWithVar/{path_var}",
+                        req -> ok().body(fromValue("simple route builder with path variable" + req.pathVariable("path_var"))))
+                .build();
+    }
 }
