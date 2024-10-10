@@ -14,12 +14,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
-/**
- * *
- * <p>Created by irina on 18.09.2020.</p>
- * <p>Project: spring-webflux-security-test0</p>
- * *
- */
+
 @Configuration
 public class NewRouters {
 

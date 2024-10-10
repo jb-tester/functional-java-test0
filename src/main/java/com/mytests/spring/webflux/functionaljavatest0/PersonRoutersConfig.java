@@ -1,13 +1,10 @@
 package com.mytests.spring.webflux.functionaljavatest0;
 
-import com.mytests.spring.webflux.functionaljavatest0.data.Person;
 import com.mytests.spring.webflux.functionaljavatest0.data.PersonsHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import reactor.core.publisher.Mono;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
